@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import '../models/task_data.dart';
 import '../widgets/task_list.dart';
 import 'add_task_screen.dart';
 
 class TaskScreen extends StatelessWidget {
-  const TaskScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +50,7 @@ class TaskScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '12 Tasks',
+                  '${Provider.of<TaskData>(context).taskCount} Tasks',
                   style: TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               ],
